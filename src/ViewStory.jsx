@@ -4,7 +4,8 @@ export default function ViewStory(){
   const {id} = useParams();
   const [story,setstory] = useState(null);
   useEffect(()=>{
-    fetch('http://localhost:3000/ststories
+    fetch('http://localhost:3000/stories')
+    .then((res) => {console.log(res)})
     .then((data)=>{data.json()})
     .then((data)=>{setstory(data)})
   },[])
